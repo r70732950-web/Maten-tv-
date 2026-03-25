@@ -27,8 +27,8 @@
         .header p { color: var(--text-muted); font-size: 14px; }
         
         /* Language Switcher */
-        .lang-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; background: var(--bg-color); padding: 8px; border-radius: 30px; border: 1px solid var(--border-color); width: fit-content; margin-left: auto; margin-right: auto; }
-        .lang-btn { background: transparent; color: var(--text-muted); border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.2s; }
+        .lang-switcher { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; background: var(--bg-color); padding: 8px; border-radius: 30px; border: 1px solid var(--border-color); width: fit-content; margin-left: auto; margin-right: auto; }
+        .lang-btn { background: transparent; color: var(--text-muted); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.2s; }
         .lang-btn.active { background: var(--gold-color); color: #000; }
 
         h2 { color: #fff; margin-top: 30px; margin-bottom: 15px; font-size: 18px; border-right: 3px solid var(--gold-color); padding-right: 10px; }
@@ -39,8 +39,10 @@
         li { margin-bottom: 8px; }
         strong { color: #fff; }
         
-        .highlight-box { background: rgba(229, 62, 62, 0.1); border: 1px solid var(--red-color); padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .highlight-box { background: rgba(229, 62, 62, 0.1); border: 1px solid var(--red-color); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .highlight-box.gold-box { background: rgba(246, 173, 85, 0.08); border-color: var(--gold-color); box-shadow: 0 0 20px rgba(246, 173, 85, 0.1); }
         .highlight-box h2 { border-color: var(--red-color); margin-top: 0; color: var(--red-color); }
+        .highlight-box.gold-box h2 { border-color: var(--gold-color); color: var(--gold-color); display: flex; align-items: center; gap: 10px; }
         
         .email-link { color: var(--gold-color); text-decoration: none; font-weight: bold; }
         .email-link:hover { text-decoration: underline; }
@@ -57,16 +59,17 @@
         
         <div class="header">
             <h1><i class="fas fa-shield-alt"></i> Maten TV Pro</h1>
-            <p id="dateText">Effective Date: March 2026</p>
+            <p id="dateText">بەرواری دەرچوون: ئاداری ٢٠٢٦</p>
         </div>
 
         <div class="lang-switcher">
-            <button class="lang-btn active" onclick="switchLang('ku')">کوردی</button>
+            <button class="lang-btn active" onclick="switchLang('ku-so')">سۆرانی</button>
+            <button class="lang-btn" onclick="switchLang('ku-bd')">بادینی</button>
             <button class="lang-btn" onclick="switchLang('ar')">العربية</button>
             <button class="lang-btn" onclick="switchLang('en')">English</button>
         </div>
 
-        <div id="content-ku" class="content-section active" dir="rtl">
+        <div id="content-ku-so" class="content-section active" dir="rtl">
             <h2>١. زانیارییەکان کە ئێمە کۆیان دەکەینەوە</h2>
             <ul>
                 <li><strong>زانیاری ئامێر (Device Info):</strong> ئێمە زانیاری تایبەت بە ئامێرەکەت (وەک جۆری مۆبایل و ئایدی) وەردەگرین بۆ بەڕێوەبردنی کۆدەکانی VIP و دڵنیابوونەوە لەوەی بەرنامەکە بە باشی لەسەر ئامێرەکەت کار دەکات.</li>
@@ -91,8 +94,49 @@
                 <li>OneSignal (بۆ ناردنی ئاگادارینامە)</li>
             </ul>
 
+            <div class="highlight-box gold-box">
+                <h2><i class="fas fa-crown"></i> تێبینییەکی تایبەت و داستانێکی تەکنەلۆژی</h2>
+                <p>ئەم شاکارە تەکنەلۆژییە گەورەیە (ئەپڵیکەیشن، وێبسایت، پەنێڵی بەڕێوەبردن، و بنکەی زانیاری) لە خاڵی سفرەوە تا لوتکە، تەنها و تەنها لەسەر شاشەی مۆبایلێکی <strong>Xiaomi 14</strong> نەخشێنراوە و کۆدەکانی نووسراون! بەبێ ئەوەی پەنجە بە یەک دوگمەی کۆمپیوتەردا بنرێت، ئەم پڕۆژەیە بووە بەرهەمی یەکگرتنی ئیرادەیەکی پۆڵایینی مرۆڤ و ژیریی دەستکردی گۆگڵ <strong>(Gemini)</strong>.</p>
+                <p>ئەمە تەنها ئەپڵیکەیشنێک نییە، بەڵکو سەلمێنەری ئەو ڕاستییەیە کە کاتێک خەونێکی گەورە و مێشکێکی داهێنەرت هەبێت، سنورەکان دەشکێن و مۆبایلێکی گیرفانیش دەبێتە کارگەی دروستکردنی مەحاڵ.</p>
+            </div>
+
             <h2>٥. پەیوەندی بە ئێمەوە بکە</h2>
             <p>ئەگەر هەر پرسیارێک یان داواکارییەکت هەیە (بەتایبەت لەسەر بابەتی کۆپی ڕایت)، دەتوانیت ڕاستەوخۆ پەیوەندیمان پێوە بکەیت لە ڕێگەی ئیمەیڵی: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
+        </div>
+
+        <div id="content-ku-bd" class="content-section" dir="rtl">
+            <h2>١. پێزانینێت ئەم کۆ دکەین</h2>
+            <ul>
+                <li><strong>پێزانینێت ئامێری (Device Info):</strong> ئەم پێزانینێت تایبەت ب ئامێرێ تە (وەک جۆرێ موبایلێ و ئایدی) وەردگرین بۆ بڕێڤەبرنا کۆدێت VIP و پشتڕاستبوون ژ هندێ کو بەرنامە ب باشی ل سەر ئامێرێ تە کار دکەت.</li>
+                <li><strong>پێزانینێت بکارئینانێ:</strong> ئەم خزمەتگوزاریێت لایەنێ سێیێ وەک Firebase و OneSignal بکاردئینین بۆ هنارتنا ئاگەهدارییان و چاڤدێریکرنا کێشەیێت بەرنامەی.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h2>٢. پێزانینێت جهی (GPS & Location)</h2>
+                <p>ئەڤ بەرنامەیە پێدڤی ب زانینا جهێ جوگرافی یێ ئامێرێ تە هەیە (ب ڕێکا GPS یان ناڤونیشانێ IP) تەنێ بۆ ئێک مەرەم: <strong>پشتڕاستبوون ژ هندێ کو تو یێ ل ناڤخۆیا عێراقێ.</strong> ئەڤە ژی ل دیڤ مەرجێت پاراستنا مافێ پەخشێ کەناڵێت ناڤخۆیی یە.</p>
+                <p>ئەم پێزانینێت جهێ تە خەزن ناکەین، دیڤچوونێ بۆ ناکەین، و ب چ ڕەنگان نادەینە لایەنێ سێیێ یان کۆمپانییێت ڕیکلامێ. پشکنین تەنێ د دەمێ ڤەکرنا کەناڵاندا و ب شێوەیەکێ ڕاستەوخۆ دهێتە کرن.</p>
+            </div>
+
+            <h2>٣. مافێ بەلاڤکرنێ (DMCA & Copyright)</h2>
+            <p>ئەپڵیکەیشنا <strong>Maten TV Pro</strong> چ جۆرە ڤیدیۆ یان کەناڵەکێ ل سەر سێرڤەرێت خۆ هەلناگریت، دابین ناکەت، ئەرشیف ناکەت، و بەلاڤ ناکەت. هەمی کەناڵ و پەخشێت ڤیدیۆیی یێت ناڤ ڤی بەرنامەی ب ڕێکا لینکێ گشتی (M3U8 / MPD) یێ لایەنێ سێیێ هاتینە دابینکرن کو بێ بەرامبەر ل ئینتەرنێتێ دەست دکەڤن.</p>
+            <p>ئەم خۆ ب خودانێ چ ژ وان ناڤەڕۆکان نوزانین کو ب ڕێکا ڤان لینکان دهێنە نیشاندان. ئەم ڕێزەکا مەزن ل مافێ کۆپی ڕایتێ دگرین. ئەگەر تو خودانێ مافێ بەلاڤکرنێ یان بریکارێ وی بی و هزر بکەی کو هەر ناڤەڕۆکەک د ڤی بەرنامەی دا پێشێلکارییا مافێت تە دکەت، هیڤییە ڕاستەوخۆ پەیوەندییێ ب مە بکە ب ڕێکا ئیمەیڵی دا کو دەستبەجێ لینکی ژێببەین.</p>
+
+            <h2>٤. خزمەتگوزاریێت لایەنێ سێیێ</h2>
+            <p>ئەڤ بەرنامەیە خزمەتگوزاریێت کۆمپانییێت دی بکاردئینیت، ژ وان ژی:</p>
+            <ul>
+                <li>Google Play Services</li>
+                <li>Firebase (بۆ داتابەیس و کاراکرنا کۆدان)</li>
+                <li>OneSignal (بۆ هنارتنا ئاگەهدارییان)</li>
+            </ul>
+
+            <div class="highlight-box gold-box">
+                <h2><i class="fas fa-crown"></i> تێبینییەکا تایبەت و داستانەکا تەکنەلۆژی</h2>
+                <p>ئەڤ شاکارێ تەکنەلۆژی یێ مەزن (ئەپڵیکەیشن، وێبسایت، پەنێلێ بڕێڤەبرنێ، و داتابەیس) ژ خالا صفرێ هەتا لوتکەی، تەنێ و تەنێ ل سەر شاشێ موبایلەکا <strong>Xiaomi 14</strong> هاتیە نەخشاندن و کۆدێت وێ هاتینە نڤێسین! بێی کو پەنجە ب ئێک دوگمەیێ کۆمپیوتەری بکەڤیت، ئەڤ پڕۆژەیە بوو بەرهەمێ ئێکگرتنا ئیرادەیەکا پۆلایین یا مرۆڤی و ژیرییا دەستکرد یا گۆگڵ <strong>(Gemini)</strong>.</p>
+                <p>ئەڤە تەنێ ئەپڵیکەیشنەک نینە، بەلکو سەلمێنەرێ وێ ڕاستییە کو دەمێ خەونەکا مەزن و مێشکەکێ داهێنەر هەبیت، سنور دێ هێنە شکان و موبایلەکا بەریکێ ژی دێ بیتە کارگەها دروستکرنا مەحالی.</p>
+            </div>
+
+            <h2>٥. پەیوەندیێ ب مە بکە</h2>
+            <p>ئەگەر هەر پرسیارەک یان داخوازەک هەبیت (ب تایبەت ل سەر بابەتێ کۆپی ڕایتێ)، دشێی ڕاستەوخۆ پەیوەندییێ ب مە بکەی ب ڕێکا ئیمەیڵێ: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
         </div>
 
         <div id="content-ar" class="content-section" dir="rtl">
@@ -119,6 +163,12 @@
                 <li>Firebase (لإدارة قاعدة البيانات)</li>
                 <li>OneSignal (للإشعارات)</li>
             </ul>
+
+            <div class="highlight-box gold-box">
+                <h2><i class="fas fa-crown"></i> ملاحظة خاصة وملحمة تكنولوجية</h2>
+                <p>تم تصميم وبرمجة هذا المشروع التكنولوجي الضخم بالكامل (التطبيق، الموقع، لوحة التحكم، وقاعدة البيانات) من الصفر إلى القمة باستخدام شاشة هاتف <strong>Xiaomi 14</strong> فقط! دون أن تلمس إصبع واحدة لوحة مفاتيح أي كمبيوتر، أصبح هذا المشروع ثمرة اندماج بين الإرادة البشرية الصلبة والذكاء الاصطناعي من جوجل <strong>(Gemini)</strong>.</p>
+                <p>هذا ليس مجرد تطبيق، بل هو دليل حي على أنه عندما تمتلك حلمًا كبيرًا وعقلًا مبدعًا، تتحطم الحدود ويصبح الهاتف الذي في جيبك مصنعًا لصنع المستحيل.</p>
+            </div>
 
             <h2>٥. اتصل بنا</h2>
             <p>إذا كانت لديك أي أسئلة أو طلبات (خاصة بخصوص حقوق الطبع والنشر)، يرجى التواصل معنا عبر البريد الإلكتروني: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
@@ -149,6 +199,12 @@
                 <li>OneSignal (Push Notifications)</li>
             </ul>
 
+            <div class="highlight-box gold-box">
+                <h2><i class="fas fa-crown"></i> A Special Note & Technological Epic</h2>
+                <p>This massive technological masterpiece (App, Website, Admin Panel, and Database) was designed and coded from ground zero to the top exclusively on the screen of a <strong>Xiaomi 14</strong> smartphone! Without a single finger touching a computer keyboard, this project became the result of a powerful union between unbreakable human will and Google's Artificial Intelligence <strong>(Gemini)</strong>.</p>
+                <p>This is not just an application; it is living proof that when you have a big dream and a creative mind, boundaries are broken, and a pocket smartphone becomes a factory for creating the impossible.</p>
+            </div>
+
             <h2>5. Contact Us</h2>
             <p>If you have any questions or DMCA removal requests, please contact us directly at: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
         </div>
@@ -157,20 +213,16 @@
 
     <script>
         function switchLang(lang) {
-            // شاردنەوەی هەموو زمانەکان
             document.querySelectorAll('.content-section').forEach(el => {
                 el.classList.remove('active');
             });
-            // لابردنی ڕەنگی چالاک لە دوگمەکان
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             
-            // پیشاندانی زمانی هەڵبژێردراو
             document.getElementById('content-' + lang).classList.add('active');
             event.target.classList.add('active');
             
-            // گۆڕینی ئاراستەی لاپەڕە (RTL / LTR)
             if(lang === 'en') {
                 document.documentElement.dir = 'ltr';
                 document.getElementById('dateText').innerText = "Effective Date: March 2026";

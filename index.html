@@ -1,64 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Maten TV</title>
+    <title>Privacy Policy - Maten TV Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            color: #333; 
-            background-color: #f9f9f9;
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #1a202c;
+            --text-main: #e2e8f0;
+            --text-muted: #a0aec0;
+            --gold-color: #f6ad55;
+            --red-color: #e53e3e;
+            --border-color: #2d3748;
         }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 { color: #2c3e50; border-bottom: 2px solid #f6ad55; padding-bottom: 10px; }
-        h2 { color: #2d3748; margin-top: 25px; }
-        ul { padding-left: 20px; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding: 20px; transition: 0.3s; }
+        
+        .container { max-width: 800px; margin: 0 auto; background-color: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid var(--border-color); }
+        
+        .header { text-align: center; border-bottom: 2px solid var(--border-color); padding-bottom: 20px; margin-bottom: 25px; }
+        .header h1 { color: var(--gold-color); font-size: 24px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .header p { color: var(--text-muted); font-size: 14px; }
+        
+        /* Language Switcher */
+        .lang-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; background: var(--bg-color); padding: 8px; border-radius: 30px; border: 1px solid var(--border-color); width: fit-content; margin-left: auto; margin-right: auto; }
+        .lang-btn { background: transparent; color: var(--text-muted); border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.2s; }
+        .lang-btn.active { background: var(--gold-color); color: #000; }
+
+        h2 { color: #fff; margin-top: 30px; margin-bottom: 15px; font-size: 18px; border-right: 3px solid var(--gold-color); padding-right: 10px; }
+        [dir="ltr"] h2 { border-right: none; border-left: 3px solid var(--gold-color); padding-right: 0; padding-left: 10px; }
+        
+        p { margin-bottom: 15px; color: var(--text-muted); }
+        ul { padding-inline-start: 20px; margin-bottom: 15px; color: var(--text-muted); }
         li { margin-bottom: 8px; }
+        strong { color: #fff; }
+        
+        .highlight-box { background: rgba(229, 62, 62, 0.1); border: 1px solid var(--red-color); padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .highlight-box h2 { border-color: var(--red-color); margin-top: 0; color: var(--red-color); }
+        
+        .email-link { color: var(--gold-color); text-decoration: none; font-weight: bold; }
+        .email-link:hover { text-decoration: underline; }
+
+        .content-section { display: none; animation: fadeIn 0.4s ease; }
+        .content-section.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Privacy Policy for Maten TV</h1>
-        <p><strong>Effective Date: March 16, 2026</strong></p>
+        
+        <div class="header">
+            <h1><i class="fas fa-shield-alt"></i> Maten TV Pro</h1>
+            <p id="dateText">Effective Date: March 2026</p>
+        </div>
 
-        <p>Welcome to Maten TV. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLang('ku')">کوردی</button>
+            <button class="lang-btn" onclick="switchLang('ar')">العربية</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
+        </div>
 
-        <h2>1. Information We Collect</h2>
-        <ul>
-            <li><strong>Device Information:</strong> We collect device-specific information (such as your device ID or model) to manage VIP access codes and ensure the app works properly on your specific device.</li>
-            <li><strong>Usage Data:</strong> We use third-party services like Firebase and OneSignal to send push notifications and monitor app performance. These services may collect IP addresses and basic usage statistics to improve user experience.</li>
-        </ul>
+        <div id="content-ku" class="content-section active" dir="rtl">
+            <h2>١. زانیارییەکان کە ئێمە کۆیان دەکەینەوە</h2>
+            <ul>
+                <li><strong>زانیاری ئامێر (Device Info):</strong> ئێمە زانیاری تایبەت بە ئامێرەکەت (وەک جۆری مۆبایل و ئایدی) وەردەگرین بۆ بەڕێوەبردنی کۆدەکانی VIP و دڵنیابوونەوە لەوەی بەرنامەکە بە باشی لەسەر ئامێرەکەت کار دەکات.</li>
+                <li><strong>زانیاری بەکارهێنان:</strong> ئێمە خزمەتگوزاری لایەنی سێیەم وەک Firebase و OneSignal بەکاردەهێنین بۆ ناردنی ئاگادارینامە و چاودێریکردنی کێشەکانی بەرنامەکە.</li>
+            </ul>
 
-        <h2>2. Third-Party Services</h2>
-        <p>Our app uses third-party services that may collect information used to identify you. These include:</p>
-        <ul>
-            <li>Google Play Services</li>
-            <li>Firebase (for real-time database and code authentication)</li>
-            <li>OneSignal (for push notifications)</li>
-            <li>Advertising Networks (to display ads within the app)</li>
-        </ul>
+            <div class="highlight-box">
+                <h2>٢. زانیاری شوێن (GPS & Location)</h2>
+                <p>ئەم بەرنامەیە پێویستی بە زانینی شوێنی جوگرافی ئامێرەکەت هەیە (لە ڕێگەی GPS یان ناونیشانی IP) تەنها بۆ یەک مەبەست: <strong>دڵنیابوونەوە لەوەی کە تۆ لە ناوخۆی عێراقیت.</strong> ئەمەش بەپێی مەرجەکانی پاراستنی مافی پەخشی کەناڵە ناوخۆییەکانە.</p>
+                <p>ئێمە زانیارییەکانی شوێنەکەت خەزن ناکەین، بەدواداچوونی بۆ ناکەین، و بە هیچ شێوەیەک نایدەین بە لایەنی سێیەم یان کۆمپانیای ڕیکلام. پشکنینەکە تەنها لە کاتی کردنەوەی کەناڵەکاندا و ڕاستەوخۆ دەکرێت.</p>
+            </div>
 
-        <h2>3. Content and Copyright</h2>
-        <p>Maten TV provides access to live TV channels via publicly available M3U8 and MPD links. We do not host, upload, or own any of the video content on our servers. All streams are provided by third-party sources.</p>
+            <h2>٣. بڕگەی مافی خاوەندارێتی (DMCA & Copyright)</h2>
+            <p>ئەپڵیکەیشنی <strong>Maten TV Pro</strong> هیچ جۆرە ڤیدیۆ یان کەناڵێک لەسەر سێرڤەرەکانی خۆی هەڵناگرێت، دابین ناکات، ئەرشیف ناکات، و دابەشی ناکات. هەموو کەناڵەکان و پەخشە ڤیدیۆییەکانی ناو ئەم بەرنامەیە لە ڕێگەی لینکی گشتی (M3U8 / MPD) لایەنی سێیەمەوە دابین کراون کە بەخۆڕایی لە ئینتەرنێتدا بەردەستن.</p>
+            <p>ئێمە خاوەندارێتی هیچ کام لەو ناوەڕۆکانە ناکەین کە لە ڕێگەی ئەم لینکانەوە پیشان دەدرێن. ئێمە ڕێزێکی زۆر لە مافی خاوەندارێتی هزری (کۆپی ڕایت) دەگرین. ئەگەر تۆ خاوەنی مافی بڵاوکردنەوەیت یان بریکاری ئەویت و پێتبوایە هەر ناوەڕۆکێک لەم بەرنامەیەدا پێشێلکاری مافەکانت دەکات، تکایە ڕاستەوخۆ پەیوەندیمان پێوە بکە لە ڕێگەی ئیمەیڵەوە بۆ ئەوەی دەستبەجێ لینکەکە بسڕینەوە.</p>
 
-        <h2>4. Data Security</h2>
-        <p>We value your trust in providing us your information, and we strive to use commercially acceptable means of protecting it. However, please remember that no method of transmission over the internet or method of electronic storage is 100% secure and reliable.</p>
+            <h2>٤. خزمەتگوزاری لایەنی سێیەم</h2>
+            <p>ئەم بەرنامەیە خزمەتگوزارییەکانی کۆمپانیاکانی تر بەکاردەهێنێت، لەوانە:</p>
+            <ul>
+                <li>Google Play Services</li>
+                <li>Firebase (بۆ بنکەی زانیاری و کاراکردنی کۆدەکان)</li>
+                <li>OneSignal (بۆ ناردنی ئاگادارینامە)</li>
+            </ul>
 
-        <h2>5. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted.</p>
+            <h2>٥. پەیوەندی بە ئێمەوە بکە</h2>
+            <p>ئەگەر هەر پرسیارێک یان داواکارییەکت هەیە (بەتایبەت لەسەر بابەتی کۆپی ڕایت)، دەتوانیت ڕاستەوخۆ پەیوەندیمان پێوە بکەیت لە ڕێگەی ئیمەیڵی: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
+        </div>
 
-        <h2>Contact Us</h2>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>matenrekany01@gmail.com</strong>.</p>
+        <div id="content-ar" class="content-section" dir="rtl">
+            <h2>١. المعلومات التي نجمعها</h2>
+            <ul>
+                <li><strong>معلومات الجهاز:</strong> نجمع معلومات خاصة بجهازك (مثل معرّف الجهاز) لإدارة أكواد VIP وضمان عمل التطبيق بشكل سليم.</li>
+                <li><strong>بيانات الاستخدام:</strong> نستخدم خدمات خارجية مثل Firebase و OneSignal لإرسال الإشعارات ومراقبة أداء التطبيق.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h2>٢. بيانات الموقع (GPS)</h2>
+                <p>يتطلب هذا التطبيق معرفة الموقع الجغرافي لجهازك (عبر GPS أو عنوان IP) لغرض واحد فقط: <strong>التأكد من أنك داخل العراق.</strong> هذا الإجراء ضروري لحماية حقوق البث للقنوات المحلية.</p>
+                <p>نحن لا نقوم بتخزين بيانات موقعك، ولا نتتبع تحركاتك، ولا نشارك هذه البيانات مع أي أطراف خارجية أو شركات إعلانات.</p>
+            </div>
+
+            <h2>٣. إخلاء المسؤولية وحقوق الطبع والنشر (DMCA)</h2>
+            <p>لا يقوم تطبيق <strong>Maten TV Pro</strong> باستضافة أو توفير أو أرشفة أو تخزين أو توزيع أي وسائط أو محتوى بث على خوادمه. يتم توفير جميع القنوات عبر روابط عامة تابعة لأطراف ثالثة ومتاحة مجانًا على الإنترنت.</p>
+            <p>نحن لا ندعي ملكية أي محتوى. نحن نحترم بشدة حقوق الملكية الفكرية للآخرين. إذا كنت مالكًا لحقوق الطبع والنشر وتعتقد أن أي محتوى في هذا التطبيق ينتهك حقوقك، يرجى الاتصال بنا مباشرة لإزالة الرابط على الفور.</p>
+
+            <h2>٤. خدمات الأطراف الثالثة</h2>
+            <p>يستخدم تطبيقنا خدمات تابعة لأطراف ثالثة، مثل:</p>
+            <ul>
+                <li>خدمات جوجل بلاي (Google Play Services)</li>
+                <li>Firebase (لإدارة قاعدة البيانات)</li>
+                <li>OneSignal (للإشعارات)</li>
+            </ul>
+
+            <h2>٥. اتصل بنا</h2>
+            <p>إذا كانت لديك أي أسئلة أو طلبات (خاصة بخصوص حقوق الطبع والنشر)، يرجى التواصل معنا عبر البريد الإلكتروني: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
+        </div>
+
+        <div id="content-en" class="content-section" dir="ltr">
+            <h2>1. Information We Collect</h2>
+            <ul>
+                <li><strong>Device Information:</strong> We collect device-specific information (such as your device ID) to manage VIP access codes and ensure the app works properly.</li>
+                <li><strong>Usage Data:</strong> We use third-party services like Firebase and OneSignal to send push notifications and monitor app performance.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h2>2. Location Data (GPS & IP)</h2>
+                <p>This application requires access to your device's geographical location (via GPS or IP address) for one sole purpose: <strong>to verify that you are located within Iraq.</strong> This is required to comply with the broadcasting rights and geo-restrictions of local TV channels.</p>
+                <p>We <strong>do not</strong> store, track, sell, or share your location data with any third parties or advertisers. The location check is processed in real-time only when accessing restricted channels.</p>
+            </div>
+
+            <h2>3. DMCA & Copyright Disclaimer</h2>
+            <p><strong>Maten TV Pro</strong> does not host, provide, archive, store, or distribute any media or broadcast content on its servers. All channels and video streams within the app are provided by third-party public links (M3U8 / MPD) freely available on the internet.</p>
+            <p>We do not claim ownership of any content provided through these public links. We deeply respect the intellectual property rights of others. If you are a copyright owner or an agent thereof and believe that any content in this app infringes upon your copyrights, please contact us directly to request the immediate removal of the link.</p>
+
+            <h2>4. Third-Party Services</h2>
+            <p>Our app uses third-party services that may collect information used to identify you, including:</p>
+            <ul>
+                <li>Google Play Services</li>
+                <li>Firebase (Database and Auth)</li>
+                <li>OneSignal (Push Notifications)</li>
+            </ul>
+
+            <h2>5. Contact Us</h2>
+            <p>If you have any questions or DMCA removal requests, please contact us directly at: <br> <a href="mailto:matenarif79@gmail.com" class="email-link">matenarif79@gmail.com</a></p>
+        </div>
+
     </div>
+
+    <script>
+        function switchLang(lang) {
+            // شاردنەوەی هەموو زمانەکان
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            // لابردنی ڕەنگی چالاک لە دوگمەکان
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // پیشاندانی زمانی هەڵبژێردراو
+            document.getElementById('content-' + lang).classList.add('active');
+            event.target.classList.add('active');
+            
+            // گۆڕینی ئاراستەی لاپەڕە (RTL / LTR)
+            if(lang === 'en') {
+                document.documentElement.dir = 'ltr';
+                document.getElementById('dateText').innerText = "Effective Date: March 2026";
+            } else if(lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.getElementById('dateText').innerText = "تاريخ الإصدار: مارس ٢٠٢٦";
+            } else {
+                document.documentElement.dir = 'rtl';
+                document.getElementById('dateText').innerText = "بەرواری دەرچوون: ئاداری ٢٠٢٦";
+            }
+        }
+    </script>
 </body>
 </html>
